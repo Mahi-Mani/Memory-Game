@@ -13,6 +13,6 @@ function PokemonCard(props){
       </div>
     )
 }
-
+// Added score to DOM
 export default PokemonCard;
 
