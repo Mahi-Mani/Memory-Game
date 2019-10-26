@@ -11,7 +11,7 @@ class App extends Component {
     pokemon
   }
 
-  swap = id => {
+  randomizeArr = id => {
     shuffle(pokemon);
     console.log(pokemon);
   }
@@ -22,6 +22,7 @@ class App extends Component {
         <h1 className="title">Pokemon List</h1>
         {this.state.pokemon.map(pokemon => (
           <PokemonCard
+          randomizeArr={this.randomizeArr}
             id={pokemon.id}
             key={pokemon.id}
             name={pokemon.name}
