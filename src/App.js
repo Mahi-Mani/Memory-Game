@@ -1,27 +1,36 @@
-import React from "react";
+import React, { Component } from "react";
 import PokemonCard from "./components/PokemonCard";
 import Wrapper from "./components/Wrapper";
 import pokemon from "./pokemon.json";
 import "./App.css";
+var shuffle = require('shuffle-array');
 
-function App() {
-  return (
-    <Wrapper>
-      <h1 className="title">Pokemon List</h1>
-      <PokemonCard
-        name={pokemon[0].name}
-        image={pokemon[0].image}
-      />
-      <PokemonCard
-        name={pokemon[1].name}
-        image={pokemon[1].image}
-      />
-      <PokemonCard
-        name={pokemon[2].name}
-        image={pokemon[2].image}
-      />
-    </Wrapper>
-  );
+class App extends Component {
+
+  state = {
+    pokemon
+  }
+
+  swap = id => {
+    shuffle(pokemon);
+    console.log(pokemon);
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <h1 className="title">Pokemon List</h1>
+        {this.state.pokemon.map(pokemon => (
+          <PokemonCard
+            id={pokemon.id}
+            key={pokemon.id}
+            name={pokemon.name}
+            image={pokemon.image}
+          />
+        ))}
+      </Wrapper>
+    );
+  }
 }
 
 export default App;
