@@ -4,6 +4,7 @@ import Wrapper from "./components/Wrapper";
 import pokemon from "./pokemon.json";
 import "./App.css";
 var shuffle = require('shuffle-array');
+const idArr = [];
 
 class App extends Component {
 
@@ -12,8 +13,14 @@ class App extends Component {
   }
 
   randomizeArr = id => {
+    console.log(id);
+    if(!idArr.includes(id))
+    idArr.push(id);
+    else
+    console.log("Try another");
+    console.log(idArr);
     shuffle(pokemon);
-    console.log(pokemon);
+    this.setState({ pokemon });
   }
 
   render() {
@@ -22,7 +29,7 @@ class App extends Component {
         <h1 className="title">Pokemon List</h1>
         {this.state.pokemon.map(pokemon => (
           <PokemonCard
-          randomizeArr={this.randomizeArr}
+            randomizeArr={this.randomizeArr}
             id={pokemon.id}
             key={pokemon.id}
             name={pokemon.name}
