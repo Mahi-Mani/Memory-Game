@@ -14,5 +14,6 @@ function PokemonCard(props){
     )
 }
 // Added score to DOM
+// Added topscore to DOM
 export default PokemonCard;
 
