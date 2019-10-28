@@ -13,12 +13,12 @@ This is an entertaining application as one could capture their lovely pokemons. 
 ## Technologies Used
 - HTML : Basic skeleton of application basically used to append react components to DOM
 - Bootstrap : For application styling
-- React : 
+- React : Javascript library for building user interfaces
 
 ## Application Functioning
 Type `npm start` from command line. Functioning of application is shown below
 
-![Site](gif/VocabularyBuilder1.gif)
+![Site](ReactApp.gif)
 
 On run of the application shows a list of pokemons that are prone to capture. You can click on your desired pokemon to capture it. Upon capturing a pokemon, your score is increased by one. You lose the game when a pokemon is captured twice. To confuse you, pokemon would randomly position itself each time you capture a pokemon.
 
