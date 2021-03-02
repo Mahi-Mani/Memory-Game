@@ -26,6 +26,8 @@ class App extends Component {
     if (!idArr.includes(id)) {
       idArr.push(id);
       score = score + 1;
+      if (score > topscore)
+        topscore = score;
       value = "CAPTURED !"
     }
     else {
@@ -45,12 +47,14 @@ class App extends Component {
     return (
       <Wrapper>
         <Navbar
-          value = {this.state.value}
+          value={this.state.value}
+          score={this.state.score}
+          topscore={this.state.topscore}
         />
-        <Jumbotron
-        score = {this.state.score}
-        topscore = {this.state.topscore}
-        />
+        {/* <Jumbotron
+          topscore={this.state.topscore}
+        /> */}
+        <br></br><br></br>
         {this.state.pokemon.map(pokemon => (
           <PokemonCard
             randomizeArr={this.randomizeArr}

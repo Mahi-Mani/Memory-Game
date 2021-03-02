@@ -1,20 +1,27 @@
 import React from "react";
 
 function Navbar(props) {
+  const navStyle = {
+    nav: {
+      // "position": "fixed"
+      
+    }
+  }
 
-    return (
-        <div className="row">
-            <div className="col-md-2"></div>
-            <div className="col-md-8">
-                <nav className="navbar navbar-dark bg-dark shadow-lg p-3 mb-5 bg-dark rounded text-center">
-                    <div className="container">
-                        <h1 className="display-4 text-light text-center">{props.value}</h1>
-                    </div>
-                </nav>
-            </div>
-            <div className="col-md-2"></div>
-        </div>
-    )
+  return (
+    <div className="row">
+      <div className="col-md-12">
+        <nav className="navbar navbar-dark bg-dark mb-7 bg-dark fixed-top text-center"
+          style={navStyle.nav}>
+          <div className="container">
+            <h1 className="display-4 text-light text-center ml-0">{props.value}</h1>
+            <h1 className="display-4 text-light text-center mr-0">Score: {props.score}</h1>
+            <h1 className="display-4 text-light text-center mr-0">Topscore: {props.topscore}</h1>
+          </div>
+        </nav>
+      </div>
+    </div>
+  )
 }
 
 export default Navbar;
